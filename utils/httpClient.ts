@@ -3,6 +3,7 @@ import axios from "axios";
 import { kToken } from "./contants";
 import { getCookie, removeCookie } from "./cookie";
 import actions from "../redux/actions";
+import Router from "next/router";
 
 const httpClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_APP_BASE_API_URL,
@@ -17,7 +18,6 @@ export const setInterceptor = (dispatch) => {
 
   httpClient.interceptors.response.use(
     function (response) {
-      console.log("token");
       return response;
     },
     function (error) {
@@ -26,7 +26,8 @@ export const setInterceptor = (dispatch) => {
         401 === error.response.status ||
         500 === error.response.status
       ) {
-        dispatch(actions.logout());
+        Router.push("/login");
+        // dispatch(actions.logout());
       } else {
         return Promise.reject(error);
       }
