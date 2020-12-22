@@ -3,4 +3,5 @@ export interface LoginReducer {
   isFetching: boolean;
   isFailed: boolean;
   token: string;
+  role: string;
 }

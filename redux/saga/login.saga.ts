@@ -13,7 +13,11 @@ export function* sagaLogin({ payload }: any) {
     if (result == kResultOk) {
       setCookie("token", res.data.token);
       yield put(action.loginSuccess(res.data));
-      // Router.push("/task");
+      if (res.data.role === "student") {
+        Router.push("/task");
+      } else if (res.data.role === "teacher") {
+        Router.push("/bo");
+      }
     } else {
       yield put(action.loginFailed());
     }

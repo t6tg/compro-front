@@ -11,12 +11,13 @@ const httpClient = axios.create({
 export const setInterceptor = (dispatch) => {
   httpClient.interceptors.request.use((req) => {
     const token = getCookie(kToken);
-    if (token) req.headers = { "x-access-token": token };
+    if (token) req.headers = { Authorization: "Bearer" + token };
     return req;
   });
 
   httpClient.interceptors.response.use(
     function (response) {
+      console.log("token");
       return response;
     },
     function (error) {

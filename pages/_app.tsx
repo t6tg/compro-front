@@ -1,8 +1,11 @@
 import "tailwindcss/tailwind.css";
 import { wrapper } from "../redux";
+import { setInterceptor } from "./../utils/httpClient";
+import { useDispatch } from "react-redux";
 import App from "next/app";
 
 function MyApp({ Component, pageProps }) {
+  setInterceptor(useDispatch());
   return <Component {...pageProps} />;
 }
 

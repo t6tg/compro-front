@@ -3,6 +3,8 @@ import React, { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
+import { getCookie } from "../utils/cookie";
+import { NextPageContext } from "next";
 
 interface Props {}
 
@@ -11,7 +13,7 @@ interface formInput {
   password: String;
 }
 
-export default function login({}: Props): ReactElement {
+export default function Login({}: Props): ReactElement {
   const { register, handleSubmit, errors } = useForm<formInput>();
 
   const dispatch = useDispatch();
@@ -95,7 +97,7 @@ export default function login({}: Props): ReactElement {
             <input
               id="password"
               name="password"
-              ref={register({ required: true, minLength: 8 })}
+              ref={register({ required: true, minLength: 1 })}
               type="password"
               placeholder="***************"
               className="mt-2 w-full shadow appearance-none border rounded py-2 px-3 text-grey-darker"

@@ -12,9 +12,13 @@ const initialState: LoginReducer = {
   token: null,
   isFetching: false,
   isFailed: false,
+  role: null,
 };
 
-export default (state = initialState, { type, payload }): LoginReducer => {
+const loginReducet = (
+  state = initialState,
+  { type, payload }
+): LoginReducer => {
   switch (type) {
     case LOGIN_FETCHING:
       return { ...state, result: null, isFailed: false, isFetching: true };
@@ -25,6 +29,7 @@ export default (state = initialState, { type, payload }): LoginReducer => {
         isFetching: false,
         isFailed: false,
         token: payload.token,
+        role: payload.role,
       };
     case LOGIN_FAILED:
       return { ...state, result: null, isFailed: true, isFetching: false };
@@ -34,3 +39,5 @@ export default (state = initialState, { type, payload }): LoginReducer => {
       return state;
   }
 };
+
+export default loginReducet;
