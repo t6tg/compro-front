@@ -1,6 +1,8 @@
 import React, { ReactElement } from "react";
 
-interface Props {}
+interface Props {
+  msg: string;
+}
 
 export default function LoadBar({}: Props): ReactElement {
   return (
@@ -10,9 +12,7 @@ export default function LoadBar({}: Props): ReactElement {
           <span className="inline-flex bg-green-600 text-white rounded-full h-6 px-3 py-3 justify-center items-center">
             Loading
           </span>
-          <span className="inline-flex px-2">
-            Currently fetching information. Wait a moment please
-          </span>
+          <span className="inline-flex px-2">{msg}</span>
         </div>
       </div>
     </div>

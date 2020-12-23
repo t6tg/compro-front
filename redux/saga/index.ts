@@ -4,6 +4,7 @@ import { sagaActiveProblem } from "./activeProblem.saga";
 import * as actionTypes from "./actionTypes";
 import { sagaProblemID } from "./problemId.saga";
 import { sagaSubmissionId } from "./submissionId.saga";
+import { sagaSubmit } from "./submit.saga";
 
 // Login
 export function* watchLoginRequest() {
@@ -23,11 +24,16 @@ export function* watchSubmissionID() {
   yield takeEvery(actionTypes.SUBMISSIONID_REQUEST, sagaSubmissionId);
 }
 
+export function* watchSubmit() {
+  yield takeEvery(actionTypes.SUBMIT_REQUEST, sagaSubmit);
+}
+
 export default function* rootSaga() {
   yield all([
     watchLoginRequest(),
     watchActiveProblemRequest(),
     watchProblemID(),
     watchSubmissionID(),
+    watchSubmit(),
   ]);
 }

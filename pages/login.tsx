@@ -28,13 +28,7 @@ export default function Login({}: Props): ReactElement {
       <div className="flex items-center justify-center h-screen bg-gray-100">
         <div className="text-gray-900 w-4/6 xl:w-2/6 bg-white font-bold rounded-lg border shadow-lg p-6">
           <div className="flex justify-center">
-            <img
-              loading="lazy"
-              src="/logo.png"
-              alt="logo"
-              width="300px"
-              className=""
-            />
+            <img loading="lazy" src="/logo.png" alt="logo" width="300px" />
           </div>
           {loginReducer.isFetching && (
             <div className="bg-blue-200 p-3 rounded-md text-lg flex items-center mx-auto w-full xl:w-full mb-3">
