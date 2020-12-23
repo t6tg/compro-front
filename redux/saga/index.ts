@@ -1,13 +1,9 @@
 import { takeEvery, all } from "redux-saga/effects";
-// import { sagaRegister } from "./register.saga";
 import { sagaLogin } from "./login.saga";
 import { sagaActiveProblem } from "./activeProblem.saga";
 import * as actionTypes from "./actionTypes";
-
-// Register
-export function* watchRegisterRequest() {
-  //   yield takeEvery(actionTypes.REGISTER_REQUEST, sagaRegister);
-}
+import { sagaProblemID } from "./problemId.saga";
+import { sagaSubmissionId } from "./submissionId.saga";
 
 // Login
 export function* watchLoginRequest() {
@@ -18,12 +14,20 @@ export function* watchLoginRequest() {
 export function* watchActiveProblemRequest() {
   yield takeEvery(actionTypes.ACTIVE_PROBLEM_REQUEST, sagaActiveProblem);
 }
+
+export function* watchProblemID() {
+  yield takeEvery(actionTypes.PROBLEMID_REQUEST, sagaProblemID);
+}
+
+export function* watchSubmissionID() {
+  yield takeEvery(actionTypes.SUBMISSIONID_REQUEST, sagaSubmissionId);
+}
+
 export default function* rootSaga() {
   yield all([
-    // watchRegisterRequest(),
     watchLoginRequest(),
     watchActiveProblemRequest(),
-    // watchLogoutRequest(),
-    // watchReLoginRequest(),
+    watchProblemID(),
+    watchSubmissionID(),
   ]);
 }

@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         primary: "#EF5B2A",
       },
+      backgroundColor: ["first"],
     },
   },
   variants: {

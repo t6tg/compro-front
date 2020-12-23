@@ -1,6 +1,7 @@
 import React from "react";
 import activeProblem from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import actions from "../redux/actions";
 import Router from "next/router";
 
 interface Props {}
@@ -12,7 +13,7 @@ export const List = (props: Props) => {
   );
 
   React.useEffect(() => {
-    dispatch(activeProblem.activeProblem());
+    dispatch(actions.activeProblem());
   }, []);
   return (
     <ul className="space-y-2 text-sm">
@@ -27,6 +28,8 @@ export const List = (props: Props) => {
             <a
               onClick={() => {
                 Router.push(`/task/${r.ID}`);
+                dispatch(actions.problemId(r.ID));
+                dispatch(actions.submissionId(r.ID));
               }}
               className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200  focus:shadow-outline"
             >
