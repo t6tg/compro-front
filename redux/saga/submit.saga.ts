@@ -3,7 +3,7 @@ import action from "../actions";
 import httpClient from "../../utils/httpClient";
 import { kResultOk } from "../../utils/contants";
 
-export function* sagaSubmit({ payload }: any) {
+export function* sagaSubmit({ payload, id }: any) {
   try {
     yield put(action.submitFetching());
     const res = yield call(httpClient.post, "/submit", payload);
@@ -13,8 +13,10 @@ export function* sagaSubmit({ payload }: any) {
       yield put(action.submissionId(res.data.data.Problem));
     } else {
       yield put(action.submitFailed());
+      yield put(action.submissionId(id));
     }
   } catch (error) {
     yield put(action.submitFailed());
+    yield put(action.submissionId(id));
   }
 }

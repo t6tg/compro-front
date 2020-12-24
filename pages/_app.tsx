@@ -3,6 +3,7 @@ import { wrapper } from "../redux";
 import { setInterceptor } from "./../utils/httpClient";
 import { useDispatch } from "react-redux";
 import App from "next/app";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   setInterceptor(useDispatch());

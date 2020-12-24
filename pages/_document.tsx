@@ -17,6 +17,36 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.jpg" />
+          <link
+            rel="preload"
+            href="/K2D/K2D-Bold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/K2D/K2D-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/K2D/K2D-Medium.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/K2D/K2D-Light.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/K2D/K2D-Thin.ttf"
+            as="font"
+            crossOrigin=""
+          />
         </Head>
         <body>
           <Main />

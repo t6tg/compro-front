@@ -5,6 +5,7 @@ import * as actionTypes from "./actionTypes";
 import { sagaProblemID } from "./problemId.saga";
 import { sagaSubmissionId } from "./submissionId.saga";
 import { sagaSubmit } from "./submit.saga";
+import { sagaProfile } from "./profile.saga";
 
 // Login
 export function* watchLoginRequest() {
@@ -28,6 +29,10 @@ export function* watchSubmit() {
   yield takeEvery(actionTypes.SUBMIT_REQUEST, sagaSubmit);
 }
 
+export function* watchProfile() {
+  yield takeEvery(actionTypes.PROFILE_REQUEST, sagaProfile);
+}
+
 export default function* rootSaga() {
   yield all([
     watchLoginRequest(),
@@ -35,5 +40,6 @@ export default function* rootSaga() {
     watchProblemID(),
     watchSubmissionID(),
     watchSubmit(),
+    watchProfile(),
   ]);
 }

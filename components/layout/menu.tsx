@@ -1,5 +1,7 @@
 import Router from "next/router";
 import React, { ReactElement, ReactNode } from "react";
+import { kToken } from "../../utils/contants";
+import { removeCookie } from "../../utils/cookie";
 import { List } from "../List";
 
 interface Props {
@@ -9,8 +11,8 @@ interface Props {
 export default function Menu({ children }: Props): ReactElement {
   return (
     <div className="flex flex-wrap bg-gray-100 w-full min-h-full ">
-      <div className="w-2/12 bg-white rounded p-3 shadow-lg hide min-h-full">
-        <ul className="space-y-2 text-sm">
+      <div className="w-2/12 bg-white  p-3 shadow-lg hide min-h-full">
+        <ul className="space-y-2 text-md">
           <li>
             <span className="flex items-center justify-center space-x-3 text-white p-2 rounded-md font-medium bg-primary">
               <span>COMPRO II GRADER</span>
@@ -76,6 +78,7 @@ export default function Menu({ children }: Props): ReactElement {
           <li>
             <a
               onClick={() => {
+                removeCookie(kToken);
                 Router.push("/login");
               }}
               className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"

@@ -4,7 +4,7 @@ interface Props {
   msg: string;
 }
 
-export default function LoadBar({}: Props): ReactElement {
+export default function LoadBar({ msg }: Props): ReactElement {
   return (
     <div>
       <div className="p-2 container mx-auto">

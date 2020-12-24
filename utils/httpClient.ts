@@ -2,7 +2,6 @@ import axios from "axios";
 
 import { kToken } from "./contants";
 import { getCookie, removeCookie } from "./cookie";
-import actions from "../redux/actions";
 import Router from "next/router";
 
 const httpClient = axios.create({
@@ -26,8 +25,8 @@ export const setInterceptor = (dispatch) => {
         401 === error.response.status ||
         500 === error.response.status
       ) {
+        removeCookie(kToken);
         Router.push("/login");
-        // dispatch(actions.logout());
       } else {
         return Promise.reject(error);
       }

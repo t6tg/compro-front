@@ -17,9 +17,13 @@ const submitReducer = (
 ): SubmitReducer => {
   switch (type) {
     case SUBMIT_FETCHING:
-      return { ...state, isFetching: true, isFailed: false };
+      return { ...state, isFetching: true, isFailed: false, result: null };
     case SUBMIT_FAILED:
-      return { ...state, isFailed: true, isFetching: false };
+      return {
+        ...state,
+        isFailed: true,
+        isFetching: false,
+      };
     case SUBMIT_SUCCESS:
       return {
         ...state,

@@ -34,16 +34,18 @@ export default function SubmissionTable({}: Props): ReactElement {
               <th className="text-left p-3 px-5">Score</th>
               <th className="text-left p-3 px-5">Status</th>
               <th className="text-left p-3 px-5">Time Stamp</th>
-              <th>Code</th>
+              <th className="text-left p-3 px-5">Code</th>
             </tr>
             {submissionReducer.data.map((r) => (
               <tr
                 key={r.ID}
-                className="border-b hover:bg-orange-100 bg-gray-100 hover:bg-primary hover:text-white"
+                className="border-b hover:bg-orange-100 bg-gray-100 "
               >
-                <td className="p-3 px-5">{r.ID}</td>
-                <td className="p-3 px-5">{r.Result}</td>
-                <td className="p-3 px-5">{r.Score}</td>
+                <td className="p-3 px-5 py-10">{r.ID}</td>
+                <td className="p-3 px-5 bg-blue-200 text-center">
+                  [ {r.Result} ]
+                </td>
+                <td className="p-3 px-5 bg-blue-300 text-center">{r.Score}</td>
                 <td className="p-3 px-5">
                   {r.Status === "successful" ? (
                     <span className="bg-green-500 text-white rounded-sm px-3 py-1 text-xs font-bold">
@@ -58,10 +60,10 @@ export default function SubmissionTable({}: Props): ReactElement {
                 <td className="p-3 px-5">
                   <Moment calendar={calendarStrings}>{r.Stamp}</Moment>
                 </td>
-                <td className="p-3 px-5 flex justify-end">
+                <td className="p-3 px-5">
                   <button
                     type="button"
-                    className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                    className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     onClick={() => OnClick(r.Code, true)}
                   >
                     Code
@@ -71,11 +73,8 @@ export default function SubmissionTable({}: Props): ReactElement {
             ))}
             {showModal ? (
               <>
-                <div
-                  className="justify-center items-center flex fixed inset-0 z-50 outline-none focus:outline-none"
-                  onClick={() => setShowModal(false)}
-                >
-                  <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                <div className="justify-center items-center flex fixed inset-0 z-50 outline-none focus:outline-none">
+                  <div className="relative my-6 mx-auto max-w-3xl w-full">
                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                       <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
                         <h3 className="text-3xl font-semibold text-primary">
@@ -83,9 +82,18 @@ export default function SubmissionTable({}: Props): ReactElement {
                         </h3>
                       </div>
                       <div className="relative p-6 flex-auto">
-                        <div className="overflow-auto max-h-60 overflow-y-auto bg-gray-200 p-4 rounded-lg my-4 text-gray-600 text-lg leading-relaxed">
-                          {code}
-                        </div>
+                        <pre className="overflow-auto max-h-60 overflow-y-auto bg-gray-200 p-4 rounded-lg my-4 text-gray-600 text-lg leading-relaxed">
+                          <code>{code}</code>
+                        </pre>
+                      </div>
+                      <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
+                        <button
+                          onClick={() => setShowModal(false)}
+                          className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                          type="button"
+                        >
+                          Close
+                        </button>
                       </div>
                     </div>
                   </div>

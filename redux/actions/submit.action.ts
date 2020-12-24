@@ -5,9 +5,10 @@ import {
   SUBMIT_SUCCESS,
 } from "../saga/actionTypes";
 
-export const submit = (payload) => ({
+export const submit = (payload, id) => ({
   type: SUBMIT_REQUEST,
   payload,
+  id,
 });
 
 export const submitFetching = () => ({

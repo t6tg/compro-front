@@ -16,7 +16,7 @@ export const List = (props: Props) => {
     dispatch(actions.activeProblem());
   }, []);
   return (
-    <ul className="space-y-2 text-sm">
+    <ul className="space-y-2 text-md">
       <li>
         <span className="flex items-center justify-center space-x-3 text-gray-700 p-2 rounded-md font-medium bg-gray-200">
           <span>Task</span>

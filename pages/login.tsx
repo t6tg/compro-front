@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Router } from "next/router";
 import React, { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +14,6 @@ interface formInput {
 
 export default function Login({}: Props): ReactElement {
   const { register, handleSubmit, errors } = useForm<formInput>();
-
   const dispatch = useDispatch();
   const loginReducer = useSelector(({ loginReducer }) => loginReducer);
 

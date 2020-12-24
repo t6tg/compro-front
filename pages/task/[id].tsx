@@ -48,6 +48,7 @@ export default function TaskID({ id }: Props): ReactElement {
           score={`${problemReducer.data.Score}`}
           timeout={`${problemReducer.data.Timeout}`}
           mem={`${problemReducer.data.Mem}`}
+          testcase={`${problemReducer.data.Testcase}`}
         />
       )}
       {!problemReducer.isFailed && submissionReducer.data != null && (
