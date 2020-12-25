@@ -2,7 +2,6 @@ import Router from "next/router";
 import React, { ReactElement, ReactNode } from "react";
 import { kToken } from "../../utils/contants";
 import { removeCookie } from "../../utils/cookie";
-import { List } from "../List";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../redux/actions";
 
@@ -10,14 +9,14 @@ interface Props {
   children: ReactNode;
 }
 
-export default function Menu({ children }: Props): ReactElement {
+export default function TMenu({ children }: Props): ReactElement {
   return (
-    <div className="flex flex-wrap bg-gray-100 w-full min-h-full ">
+    <div className="flex flex-wrap bg-gry-100 w-full min-h-full ">
       <div className="w-2/12 bg-white  p-3 shadow-lg hide min-h-full">
         <ul className="space-y-2 text-md">
-          <li>
+          <li onClick={() => Router.push("/bo")} className="cursor-pointer">
             <span className="flex items-center justify-center space-x-3 text-white p-2 rounded-md font-medium bg-primary">
-              <span>COMPRO II GRADER</span>
+              <span>TEACHER</span>
             </span>
           </li>
           <li>
@@ -28,7 +27,7 @@ export default function Menu({ children }: Props): ReactElement {
           <li>
             <a
               onClick={() => {
-                Router.push("/score");
+                Router.push("/bo/score");
               }}
               className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
@@ -48,7 +47,7 @@ export default function Menu({ children }: Props): ReactElement {
                   />
                 </svg>
               </span>
-              <span>Score</span>
+              <span>Student Score</span>
             </a>
           </li>
           <li>
@@ -105,10 +104,6 @@ export default function Menu({ children }: Props): ReactElement {
             </a>
           </li>
         </ul>
-        <br />
-        <hr />
-        <br />
-        <List />
       </div>
       <div className="w-9/12 mx-auto min-h-screen">
         <div className="p-4 text-gray-500">{children}</div>

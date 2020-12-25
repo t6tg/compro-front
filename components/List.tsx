@@ -22,6 +22,7 @@ export const List = (props: Props) => {
           <span>Task</span>
         </span>
       </li>
+      {activeProblemReducer.isFetching && "Loading...."}
       {activeProblemReducer.data &&
         activeProblemReducer.data.map((r) => (
           <li key={r.ID}>

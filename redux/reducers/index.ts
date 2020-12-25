@@ -5,6 +5,7 @@ import problemReducer from "./problemId.reducer";
 import submissionReducer from "./submissionId.reducer";
 import submitReducer from "./submit.reducer";
 import profileReducer from "./profile.reducer";
+import tProblemReducer from "./teacherProblem.reducer";
 
 export default combineReducers({
   activeProblemReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   submissionReducer,
   submitReducer,
   profileReducer,
+  tProblemReducer,
 });

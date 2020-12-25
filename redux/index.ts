@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, compose, Store } from "redux";
-import thunk from "redux-thunk";
 import reducer from "./reducers";
 import { MakeStore, createWrapper, Context } from "next-redux-wrapper";
 import { composeWithDevTools } from "redux-devtools-extension";

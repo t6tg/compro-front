@@ -16,8 +16,6 @@ type Inputs = {
 
 export default function ChangePass({}: Props): ReactElement {
   const { register, handleSubmit, watch, errors } = useForm<Inputs>();
-  let newPass = watch("newPass", "");
-  let conPass = watch("conPass", "");
   const onSubmit = (data, e) => {
     console.log(data);
     e.target.reset();

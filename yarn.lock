@@ -3436,6 +3436,11 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
+react-tailwind-table@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-tailwind-table/-/react-tailwind-table-1.0.1.tgz#38dc62c78f7fa62be0695e3feaf88a9f8ad44d73"
+  integrity sha512-BLWag35mD8D2VcgPYXLFxf7FZOYN54blK7aTs5el+1aR1sYYG90HlE2zrREFv/ld6wPvw6XdfKuB1Tys7jfS4w==
+
 react-toastify@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.2.0.tgz#f2d76747c70b9de91f71f253d9feae6b53dc836c"

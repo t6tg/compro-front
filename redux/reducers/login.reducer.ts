@@ -2,7 +2,6 @@ import {
   LOGIN_FAILED,
   LOGIN_FETCHING,
   LOGIN_SUCCESS,
-  LOGOUT_SUCCESS,
 } from "../saga/actionTypes";
 
 import { LoginReducer } from "../../types/login.types";
@@ -33,8 +32,6 @@ const loginReducet = (
       };
     case LOGIN_FAILED:
       return { ...state, result: null, isFailed: true, isFetching: false };
-    case LOGOUT_SUCCESS:
-      return initialState;
     default:
       return state;
   }
