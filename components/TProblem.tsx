@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import LoadBar from "./Skeleton/LoadBar.skeleton";
 import ErrorBar from "./Skeleton/ErrorBar.skeleton";
+import Router from "next/router";
 
 interface Props {}
 
@@ -25,8 +26,11 @@ export default function TProblem({}: Props): ReactElement {
       {tProblemReducer.isFailed && (
         <ErrorBar message="Please contact administrator." />
       )}
-      <button className="float-right m-3 py-2 px-4 bg-primary rounded-md text-white">
-        Add New Problem
+      <button
+        onClick={() => Router.push("/bo/problem/create")}
+        className="float-right m-3 py-2 px-4 bg-primary rounded-md text-white"
+      >
+        Create New Problem
       </button>
       {tProblemReducer.data && (
         <Table
@@ -81,7 +85,7 @@ export default function TProblem({}: Props): ReactElement {
             edit: (
               <button
                 onClick={() => {
-                  alert(r.ID);
+                  Router.push(`/bo/problem/edit?id=${r.ID}`);
                 }}
                 className="bg-yellow-500 py-1 px-2 text-white rounded-md grid grid-flow-col gap-1 shadow-md"
               >
@@ -105,7 +109,7 @@ export default function TProblem({}: Props): ReactElement {
             ViewScore: (
               <button
                 onClick={() => {
-                  alert(r.ID);
+                  // Router.push("/bo/score")
                 }}
                 className="bg-pink-500 py-1 px-2 text-white rounded-md shadow-md"
               >

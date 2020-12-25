@@ -5,6 +5,7 @@ import submissionId from "./submissionId.action";
 import submit from "./submit.action";
 import profile from "./profile.action";
 import tProblem from "./teacherProblem.action";
+import createProblem from "./createProblem.action";
 
 export default {
   ...login,
@@ -14,4 +15,5 @@ export default {
   ...submit,
   ...profile,
   ...tProblem,
+  ...createProblem,
 };

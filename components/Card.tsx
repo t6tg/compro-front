@@ -70,11 +70,11 @@ export const Card = ({ id, name, score, mem, timeout, testcase }: Props) => {
               </span>
               <b> s.</b>
             </p>
-            <p>
+            {/* <p>
               <b>MemoryLimit : </b>{" "}
               <span className="rounded-md py-1 px-3 bg-gray-100">{mem}</span>
               <b> MB.</b>
-            </p>
+            </p> */}
           </div>
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
