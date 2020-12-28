@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { ReactElement } from "react";
 import TLayout from "../../components/layout/TLayout";
-import TProblem from "../../components/TProblem";
+import TProblem from "../../components/bo/TProblem";
 
 interface Props {}
 

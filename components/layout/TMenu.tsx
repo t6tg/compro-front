@@ -55,7 +55,7 @@ export default function TMenu({ children }: Props): ReactElement {
           <li>
             <a
               onClick={() => {
-                Router.push("/bo/user");
+                Router.push("/bo/student");
               }}
               className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >
@@ -163,7 +163,7 @@ export default function TMenu({ children }: Props): ReactElement {
           <li>
             <a
               onClick={() => {
-                Router.push("/password");
+                Router.push("/bo/password");
               }}
               className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
             >

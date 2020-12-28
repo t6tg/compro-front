@@ -4,6 +4,7 @@ import React, { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
+import server from "../utils/server.json";
 
 interface Props {}
 
@@ -27,7 +28,7 @@ export default function Login({}: Props): ReactElement {
       </Head>
       <div className="flex items-center justify-center h-screen bg-gray-100">
         <div className="text-gray-900 w-4/6 xl:w-2/6 bg-white font-bold rounded-lg border shadow-lg p-6">
-          <div className="flex justify-center">
+          <div className="grid justify-center">
             <img loading="lazy" src="/logo.png" alt="logo" width="300px" />
           </div>
           {loginReducer.isFetching && (
@@ -106,6 +107,11 @@ export default function Login({}: Props): ReactElement {
               className="w-full bg-primary text-white font-bold p-2 rounded-md cursor-pointer"
               value="SIGN IN"
             />
+            <p className="text-xs text-primary text-center mt-2 p-3 bg-gray-100 rounded-md">
+              จัดทำโดย นายธนวัฒน์ กุลาตี นักศึกษา
+              ภาควิทยาการคอมพิวเตอร์และสารสนเทศ
+              มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+            </p>
           </form>
         </div>
       </div>

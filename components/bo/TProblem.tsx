@@ -2,9 +2,9 @@ import React, { ReactElement } from "react";
 import Table from "react-tailwind-table";
 import "react-tailwind-table/dist/index.css";
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../redux/actions";
-import LoadBar from "./Skeleton/LoadBar.skeleton";
-import ErrorBar from "./Skeleton/ErrorBar.skeleton";
+import actions from "../../redux/actions";
+import LoadBar from "../Skeleton/LoadBar.skeleton";
+import ErrorBar from "../Skeleton/ErrorBar.skeleton";
 import Router from "next/router";
 
 interface Props {}

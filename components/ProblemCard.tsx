@@ -60,16 +60,17 @@ export default function ProblemCard({}: Props): ReactElement {
       <span>
         <label>Timelimit : </label>
         <br />
-        <input
-          type="number"
-          minLength={1}
-          defaultValue={1}
-          maxLength={5}
+        <select
           name="timeout"
           className="bg-gray-100 px-3 py-1 w-full rounded-md"
-          placeholder="TimeLimit"
           ref={register({ required: true })}
-        />
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
         <br />
         <small className="text-primary">
           min 1s - max 5s per tesecase ( recommend 1s )
@@ -90,14 +91,27 @@ export default function ProblemCard({}: Props): ReactElement {
       <span>
         <label>NumberOfTestCase : </label>
         <br />
-        <input
-          type="number"
+        <select
           name="testcase"
           ref={register({ required: true })}
           className="bg-gray-100 px-3 py-1 w-full rounded-md"
-          placeholder="NumberOfTestCase"
-          defaultValue={1}
-        />
+        >
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+         <option value="10">10</option>
+         <option value="11">11</option>
+         <option value="12">12</option>
+         <option value="13">13</option>
+         <option value="14">14</option>
+         <option value="15">15</option>
+        </select>
       </span>
       <span>
         <label>Testcase File</label>
