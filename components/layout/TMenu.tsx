@@ -105,34 +105,7 @@ export default function TMenu({ children }: Props): ReactElement {
               <span>File Management</span>
             </a>
           </li>
-
-          <li>
-            <a
-              onClick={() => {
-                Router.push("/bo/submissions");
-              }}
-              className="cursor-pointer flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-            >
-              <span className="text-gray-600">
-                <svg
-                  className="h-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                  />
-                </svg>
-              </span>
-              <span>Submissions</span>
-            </a>
-          </li>
-
+          
           <li>
             <a
               onClick={() => {

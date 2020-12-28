@@ -5,10 +5,14 @@ import { useDispatch } from "react-redux";
 import App from "next/app";
 import server from "../utils/server.json";
 import "../styles/global.css";
+import Head from "next/head";
 
 const ResetSystem = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
+      <Head>
+        <title>Closed for renovation | Computer Programming II </title>
+      </Head>
       <div className="text-gray-900 w-4/6 xl:w-2/6 bg-white font-bold rounded-lg border shadow-lg p-6">
         <div className="grid justify-center">
           <img loading="lazy" src="/logo.png" alt="logo" width="300px" />
@@ -38,7 +42,7 @@ const ResetSystem = () => {
 function MyApp({ Component, pageProps }) {
   setInterceptor(useDispatch());
   if (
-    new Date().getHours().toLocaleString() === server.clear_memory_time_hr &&
+    new Date().getHours() === server.clear_memory_time_hr &&
     new Date().getMinutes() <= server.clear_memory_time_min
   ) {
     return <ResetSystem />;
