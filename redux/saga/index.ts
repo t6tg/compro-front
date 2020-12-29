@@ -8,6 +8,9 @@ import { sagaSubmit } from "./submit.saga";
 import { sagaProfile } from "./profile.saga";
 import { sagaTProblem } from "./teacherProblem.saga";
 import { sagaCreateProblem } from "./createProblem.saga";
+import { sagaTestcase } from "./testcase.saga";
+import { sagaTProblemID } from "./TproblemId.saga";
+import { sagaUploadStudent } from "./uploadStudent.saga";
 
 // Login
 export function* watchLoginRequest() {
@@ -43,6 +46,18 @@ export function* watchCreateProblem() {
   yield takeEvery(actionTypes.CREATE_PROBLEM_REQUEST, sagaCreateProblem);
 }
 
+export function* watchTestcase() {
+  yield takeEvery(actionTypes.TESTCASE_REQUEST, sagaTestcase);
+}
+
+export function* watchTProblemID() {
+  yield takeEvery(actionTypes.TPROBLEM_REQUEST, sagaTProblemID);
+}
+
+export function* watchUploadStudent() {
+  yield takeEvery(actionTypes.UPLOAD_STUDENT_REQUEST, sagaUploadStudent);
+}
+
 export default function* rootSaga() {
   yield all([
     watchLoginRequest(),
@@ -53,5 +68,8 @@ export default function* rootSaga() {
     watchProfile(),
     watchTProblem(),
     watchCreateProblem(),
+    watchTestcase(),
+    watchTProblemID(),
+    watchUploadStudent(),
   ]);
 }

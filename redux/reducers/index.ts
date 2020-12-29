@@ -7,6 +7,9 @@ import submitReducer from "./submit.reducer";
 import profileReducer from "./profile.reducer";
 import tProblemReducer from "./teacherProblem.reducer";
 import createProblemReducer from "./createProblem.reducer";
+import testcaseReducer from "./testcase.reducer";
+import TproblemReducer from "./tproblemId.reducer";
+import uploadStudentReducer from "./uploadStudent.reducer";
 
 export default combineReducers({
   activeProblemReducer,
@@ -17,4 +20,7 @@ export default combineReducers({
   profileReducer,
   tProblemReducer,
   createProblemReducer,
+  testcaseReducer,
+  TproblemReducer,
+  uploadStudentReducer,
 });

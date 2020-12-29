@@ -78,7 +78,14 @@ export default function TProblem({}: Props): ReactElement {
           ]}
           rows={tProblemReducer.data.map((r) => ({
             problem_id: r.ID,
-            name: r.Name,
+            name: (
+              <a
+                className="underline cursor-pointer hover:text-primary"
+                onClick={() => Router.push(`/bo/problem/testcase?id=${r.ID}`)}
+              >
+                {r.Name}
+              </a>
+            ),
             Testcase: r.Testcase,
             Score: r.Score,
             Type: r.Teacher,

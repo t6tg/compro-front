@@ -108,8 +108,8 @@ export default function Login({}: Props): ReactElement {
               value="SIGN IN"
             />
             <p className="text-xs text-primary text-center mt-2 p-3 bg-gray-100 rounded-md">
-              จัดทำโดย นายธนวัฒน์ กุลาตี นักศึกษา
-              ภาควิทยาการคอมพิวเตอร์และสารสนเทศ
+              สงวนลิขสิทธิ์ 2562 - {new Date().getFullYear() + 543} โดย
+              นายธนวัฒน์ กุลาตี นักศึกษา ภาควิทยาการคอมพิวเตอร์และสารสนเทศ
               มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
             </p>
           </form>

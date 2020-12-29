@@ -1,16 +1,15 @@
 import Head from "next/head";
 import React, { ReactElement } from "react";
-import ChangePass from "../../components/changePass";
+import TLayout from "../../components/layout/TLayout";
 
 interface Props {}
 
 export default function Password({}: Props): ReactElement {
   return (
-    <div>
+    <TLayout>
       <Head>
         <title>Change Password | Computer Programming II</title>
       </Head>
-      {/* <ChangePass /> */}
-    </div>
+    </TLayout>
   );
 }

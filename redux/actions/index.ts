@@ -6,6 +6,9 @@ import submit from "./submit.action";
 import profile from "./profile.action";
 import tProblem from "./teacherProblem.action";
 import createProblem from "./createProblem.action";
+import testcase from "./testcase.action";
+import tProblemID from "./tproblemId.action";
+import uploadStudent from "./uploadStudent.action";
 
 export default {
   ...login,
@@ -16,4 +19,7 @@ export default {
   ...profile,
   ...tProblem,
   ...createProblem,
+  ...testcase,
+  ...tProblemID,
+  ...uploadStudent,
 };
