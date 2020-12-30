@@ -11,6 +11,8 @@ import { sagaCreateProblem } from "./createProblem.saga";
 import { sagaTestcase } from "./testcase.saga";
 import { sagaTProblemID } from "./TproblemId.saga";
 import { sagaUploadStudent } from "./uploadStudent.saga";
+import { sagaStudent } from "./student.saga";
+import { sagaSwitchID } from "./switch.saga";
 
 // Login
 export function* watchLoginRequest() {
@@ -51,11 +53,19 @@ export function* watchTestcase() {
 }
 
 export function* watchTProblemID() {
-  yield takeEvery(actionTypes.TPROBLEM_REQUEST, sagaTProblemID);
+  yield takeEvery(actionTypes.TPROBLEMID_REQUEST, sagaTProblemID);
 }
 
 export function* watchUploadStudent() {
   yield takeEvery(actionTypes.UPLOAD_STUDENT_REQUEST, sagaUploadStudent);
+}
+
+export function* watchStudent() {
+  yield takeEvery(actionTypes.STUDENT_REQUEST, sagaStudent);
+}
+
+export function* watchSwitchID() {
+  yield takeEvery(actionTypes.SWITCHID_REQUEST, sagaSwitchID);
 }
 
 export default function* rootSaga() {
@@ -71,5 +81,7 @@ export default function* rootSaga() {
     watchTestcase(),
     watchTProblemID(),
     watchUploadStudent(),
+    watchStudent(),
+    watchSwitchID(),
   ]);
 }

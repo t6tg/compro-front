@@ -5,9 +5,8 @@ import {
   TPROBLEM_SUCCESS,
 } from "../saga/actionTypes";
 
-export const tProblem = (payload) => ({
+export const tProblem = () => ({
   type: TPROBLEM_REQUEST,
-  payload,
 });
 
 export const tProblemFetching = () => ({

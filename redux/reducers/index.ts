@@ -8,8 +8,10 @@ import profileReducer from "./profile.reducer";
 import tProblemReducer from "./teacherProblem.reducer";
 import createProblemReducer from "./createProblem.reducer";
 import testcaseReducer from "./testcase.reducer";
-import TproblemReducer from "./tproblemId.reducer";
+import TproblemIDReducer from "./tproblemId.reducer";
 import uploadStudentReducer from "./uploadStudent.reducer";
+import studentReducer from "./student.reducer";
+import switchReducer from "./switch.reducer";
 
 export default combineReducers({
   activeProblemReducer,
@@ -21,6 +23,8 @@ export default combineReducers({
   tProblemReducer,
   createProblemReducer,
   testcaseReducer,
-  TproblemReducer,
+  TproblemIDReducer,
   uploadStudentReducer,
+  studentReducer,
+  switchReducer,
 });

@@ -7,8 +7,10 @@ import profile from "./profile.action";
 import tProblem from "./teacherProblem.action";
 import createProblem from "./createProblem.action";
 import testcase from "./testcase.action";
-import tProblemID from "./tproblemId.action";
+import TproblemId from "./tproblemId.action";
 import uploadStudent from "./uploadStudent.action";
+import student from "./student.action";
+import switchStudent from "./switch.action";
 
 export default {
   ...login,
@@ -20,6 +22,8 @@ export default {
   ...tProblem,
   ...createProblem,
   ...testcase,
-  ...tProblemID,
+  ...TproblemId,
   ...uploadStudent,
+  ...student,
+  ...switchStudent,
 };

@@ -1,48 +1,48 @@
+import { SwitchReducer } from "../../types/switch.types";
 import {
-  TPROBLEMID_FAILED,
-  TPROBLEMID_FETCHING,
-  TPROBLEMID_SUCCESS,
+  SWITCHID_FETCHING,
+  SWITCHID_SUCCESS,
+  SWITCHID_FAILED,
 } from "../saga/actionTypes";
 
-import { ProblemIdReducer } from "../../types/problemId.types";
-
-const initialState: ProblemIdReducer = {
+const initialState: SwitchReducer = {
   data: null,
   isFailed: false,
   isFetching: false,
   result: null,
 };
 
-const TproblemIDReducer = (
+const switchReducer = (
   state = initialState,
   { type, payload }
-): ProblemIdReducer => {
+): SwitchReducer => {
   switch (type) {
-    case TPROBLEMID_FETCHING:
+    case SWITCHID_FETCHING:
       return {
         ...state,
+        data: null,
         isFailed: false,
         isFetching: true,
-        data: null,
         result: null,
       };
-    case TPROBLEMID_SUCCESS:
+    case SWITCHID_SUCCESS:
       return {
         ...state,
+        data: payload.data,
         isFailed: false,
         isFetching: false,
-        data: payload.data,
         result: payload.result,
       };
-    case TPROBLEMID_FAILED:
+    case SWITCHID_FAILED:
       return {
         ...state,
+        data: null,
         isFailed: true,
         isFetching: false,
+        result: null,
       };
     default:
       return state;
   }
 };
-
-export default TproblemIDReducer;
+export default switchReducer;

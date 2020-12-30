@@ -16,9 +16,9 @@ export default function Edit({}: Props): ReactElement {
   const { id } = router.query;
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(actions.tProblem(id));
+    dispatch(actions.TproblemId(id));
   }, []);
-  const TproblemReducer = useSelector((state) => state.TproblemReducer);
+  const TproblemReducer = useSelector((state) => state.TproblemIDReducer);
   return (
     <TLayout>
       <Head>
