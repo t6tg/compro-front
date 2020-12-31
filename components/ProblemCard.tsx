@@ -26,6 +26,7 @@ export default function ProblemCard({}: Props): ReactElement {
     formData.append("testcase", data.testcase);
     formData.append("timeout", data.timeout);
     formData.append("status", data.status);
+    formData.append("quiz", data.quiz);
     dispatch(actions.createProblem(formData));
     e.target.reset();
   };
@@ -96,21 +97,21 @@ export default function ProblemCard({}: Props): ReactElement {
           ref={register({ required: true })}
           className="bg-gray-100 px-3 py-1 w-full rounded-md"
         >
-         <option value="1">1</option>
-         <option value="2">2</option>
-         <option value="3">3</option>
-         <option value="4">4</option>
-         <option value="5">5</option>
-         <option value="6">6</option>
-         <option value="7">7</option>
-         <option value="8">8</option>
-         <option value="9">9</option>
-         <option value="10">10</option>
-         <option value="11">11</option>
-         <option value="12">12</option>
-         <option value="13">13</option>
-         <option value="14">14</option>
-         <option value="15">15</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
         </select>
       </span>
       <span>
@@ -129,7 +130,6 @@ export default function ProblemCard({}: Props): ReactElement {
           รวมไฟล์ 1.in 2.in 1.out 2.out )
         </small>
       </span>
-
       <input
         type="hidden"
         name="mem"
@@ -142,9 +142,15 @@ export default function ProblemCard({}: Props): ReactElement {
         defaultValue="inactive"
         ref={register({ required: true })}
       />
+      <span className="py-1 px-4 bg-gray-100 my-2 rounded-md">
+        <input type="checkbox" name="quiz" id="quiz" ref={register} /> : Quiz
+        Mode
+        <small className="text-primary mx-2">
+          ( สำหรับสร้างโจทย์เพื่อออกข้อสอบเท่านั้น )
+        </small>
+      </span>
       <input
         type="submit"
-        defaultValue="Create"
         className="w-full bg-primary py-1 px-3 text-white rounded-md shadow-md cursor-pointer"
         disabled={createProblemReducer.isFetching}
       />
