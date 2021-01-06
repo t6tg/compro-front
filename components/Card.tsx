@@ -2,9 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-nextjs-toast";
 import "react-toastify/dist/ReactToastify.css";
-import { submit } from "../redux/actions/submit.action";
+import { kResultOk } from "../utils/contants";
 
 interface Props {
   id: string;
@@ -28,22 +28,21 @@ export const Card = ({ id, name, score, mem, timeout, testcase }: Props) => {
     formData.append("id", data.ProblemID);
     dispatch(actions.submit(formData, data.ProblemID));
     // submit error
-    submitReducer.isFailed &&
-      toast.error("Error Please try again later.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
     e.target.reset();
   };
 
   return (
     <div>
-      <ToastContainer />
+      {submitReducer.result === kResultOk &&
+        toast.notify(`Submit Successful`, {
+          type: "success",
+        })}
+      {submitReducer.isFailed &&
+        !submitReducer.result &&
+        toast.notify(`Please try again later.`, {
+          type: "error",
+        })}
+      <ToastContainer align={"right"} position={"bottom"} />
       <div className="bg-white p-6 mb-5 w-full rounded-md shadow-md">
         <div className="grid grid-flow-col">
           <div className="grid gap-1">

@@ -12,9 +12,9 @@ interface Props {}
 export default function TProblem({}: Props): ReactElement {
   const dispatch = useDispatch();
 
-  // React.useEffect(() => {
-  //   dispatch(actions.tProblem());
-  // }, []);
+  React.useEffect(() => {
+    dispatch(actions.tProblem());
+  }, []);
 
   const tProblemReducer = useSelector((state) => state.tProblemReducer);
 

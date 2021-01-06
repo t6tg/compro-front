@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect } from "react";
-import { GetServerSideProps, NextPageContext } from "next";
 import Layout from "../../components/layout/layout";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../redux/actions";
@@ -11,12 +10,11 @@ import submissionReducer from "../../redux/reducers/submissionId.reducer";
 import submitReducer from "../../redux/reducers/submit.reducer";
 import LoadingSkeleton from "../../components/Skeleton/Loading.skeleton";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-interface Props {
-  id: string;
-}
-
-export default function TaskID({ id }: Props): ReactElement {
+export default function TaskID(): ReactElement {
+  const router = useRouter();
+  const { id } = router.query;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.problemId(id));
@@ -57,12 +55,3 @@ export default function TaskID({ id }: Props): ReactElement {
     </Layout>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
-  const id = ctx.query.id;
-  return {
-    props: {
-      id,
-    },
-  };
-};
