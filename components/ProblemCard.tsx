@@ -143,8 +143,8 @@ export default function ProblemCard({}: Props): ReactElement {
         ref={register({ required: true })}
       />
       <span className="py-1 px-4 bg-gray-100 my-2 rounded-md">
-        <input type="checkbox" name="quiz" id="quiz" ref={register} /> : Quiz
-        Mode
+        <input type="checkbox" name="quiz" id="quiz" ref={register} disabled />{" "}
+        : Quiz Mode
         <small className="text-primary mx-2">
           ( สำหรับสร้างโจทย์เพื่อออกข้อสอบเท่านั้น )
         </small>
