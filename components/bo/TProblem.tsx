@@ -65,14 +65,19 @@ export default function TProblem({}: Props): ReactElement {
               use: "Score",
               use_in_search: false,
             },
+            // {
+            //   field: "edit",
+            //   use: "Edit",
+            //   use_in_search: false,
+            // },
+            // {
+            //   field: "ViewScore",
+            //   use: "ViewScore",
+            //   use_in_search: false,
+            // },
             {
-              field: "edit",
-              use: "Edit",
-              use_in_search: false,
-            },
-            {
-              field: "ViewScore",
-              use: "ViewScore",
+              field: "Switch",
+              use: "Switch",
               use_in_search: false,
             },
           ]}
@@ -89,40 +94,40 @@ export default function TProblem({}: Props): ReactElement {
             Testcase: r.Testcase,
             Score: r.Score,
             Type: r.Teacher,
-            edit: (
-              <button
-                onClick={() => {
-                  Router.push(`/bo/problem/edit?id=${r.ID}`);
-                }}
-                className="bg-yellow-500 py-1 px-2 text-white rounded-md grid grid-flow-col gap-1 shadow-md"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-3 mt-1"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  />
-                </svg>
-                Edit
-              </button>
-            ),
-            ViewScore: (
-              <button
-                onClick={() => {
-                  // Router.push("/bo/score")
-                }}
-                className="bg-pink-500 py-1 px-2 text-white rounded-md shadow-md"
-              >
-                Score
-              </button>
-            ),
+            // edit: (
+            //   <button
+            //     onClick={() => {
+            //       Router.push(`/bo/problem/edit?id=${r.ID}`);
+            //     }}
+            //     className="bg-yellow-500 py-1 px-2 text-white rounded-md grid grid-flow-col gap-1 shadow-md"
+            //   >
+            //     <svg
+            //       xmlns="http://www.w3.org/2000/svg"
+            //       fill="none"
+            //       viewBox="0 0 24 24"
+            //       stroke="currentColor"
+            //       className="w-3 mt-1"
+            //     >
+            //       <path
+            //         strokeLinecap="round"
+            //         strokeLinejoin="round"
+            //         strokeWidth={2}
+            //         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+            //       />
+            //     </svg>
+            //     Edit
+            //   </button>
+            // ),
+            // ViewScore: (
+            //   <button
+            //     onClick={() => {
+            //       // Router.push("/bo/score")
+            //     }}
+            //     className="bg-pink-500 py-1 px-2 text-white rounded-md shadow-md"
+            //   >
+            //     Score
+            //   </button>
+            // ),
             Status:
               r.Status === "active" ? (
                 <span className="bg-green-800 px-2 py-0.5 text-white text-sm">
@@ -133,6 +138,16 @@ export default function TProblem({}: Props): ReactElement {
                   {r.Status}
                 </span>
               ),
+            Switch: (
+              <button
+                className="bg-primary text-white px-2 py-0.5 rounded-sm"
+                onClick={() => {
+                  dispatch(actions.switchStudent(r.Username));
+                }}
+              >
+                Switch
+              </button>
+            ),
           }))}
         />
       )}

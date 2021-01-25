@@ -14,6 +14,9 @@ export default function SwitchAll({}: Props): ReactElement {
     {
       Section: 2,
     },
+    {
+      Section: 3,
+    },
   ];
 
   return (
