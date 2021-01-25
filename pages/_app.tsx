@@ -15,7 +15,7 @@ const ResetSystem = () => {
         <meta
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
-        ></meta>
+        />
       </Head>
       <div className="text-gray-900 w-4/6 xl:w-2/6 bg-white font-bold rounded-lg border shadow-lg p-6">
         <div className="grid justify-center">
