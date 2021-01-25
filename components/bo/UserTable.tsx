@@ -46,11 +46,11 @@ export default function UserTable({}: Props): ReactElement {
               use: "Switch",
               use_in_search: false,
             },
-            {
-              field: "Edit",
-              use: "Edit",
-              use_in_search: false,
-            },
+            // {
+            //   field: "Edit",
+            //   use: "Edit",
+            //   use_in_search: false,
+            // },
           ]}
           rows={studentReducer.data.map((r) => ({
             Username: r.Username,
@@ -76,14 +76,14 @@ export default function UserTable({}: Props): ReactElement {
                 Switch
               </button>
             ),
-            Edit: (
-              <button
-                className="bg-yellow-400 text-white px-2 py-0.5 rounded-sm"
-                onClick={() => {}}
-              >
-                Edit
-              </button>
-            ),
+            // Edit: (
+            //   <button
+            //     className="bg-yellow-400 text-white px-2 py-0.5 rounded-sm"
+            //     onClick={() => {}}
+            //   >
+            //     Edit
+            //   </button>
+            // ),
           }))}
         />
       )}
