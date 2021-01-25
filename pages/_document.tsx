@@ -17,6 +17,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.jpg" />
+          <meta
+            http-equiv="Content-Security-Policy"
+            content="upgrade-insecure-requests"
+          ></meta>
           <link
             rel="preload"
             href="/K2D/K2D-Bold.ttf"
